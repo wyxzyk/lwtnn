@@ -61,4 +61,3 @@ script:
   - ./tests/test-time-distributed-dense.sh
   - ./tests/test-gru-sequence.sh
   - ./tests/check-version-number.sh
-  - ./tests/check-conversion.sh
