@@ -154,10 +154,15 @@ def _get_merge_layer_parameters(h5, layer_config, n_in, layer_type):
     sum_outputs = 0
     sublayers = []
     for sublayer in layer_config['layers']:
-        assert sublayer['class_name'].lower() == 'sequential'
-        assert len(sublayer['config']) == 1
-        subcfg = sublayer['config'][0]['config']
-        class_name = sublayer['config'][0]['class_name'].lower()
+        if sublayer['class_name'].lower() == 'sequential'
+            assert sublayer['class_name'].lower() == 'sequential'
+            assert len(sublayer['config']) == 1
+            subcfg = sublayer['config'][0]['config']
+            class_name = sublayer['config'][0]['class_name'].lower()
+        else:
+        subcfg = sublayer['config']
+        class_name = sublayer['class_name'].lower()
+
 
         if class_name == 'embedding':
             layers = _get_h5_layers(h5[subcfg['name']])
